@@ -9,7 +9,9 @@ def initialize(name, till, drinks)
   @drinks = drinks || []
 end
 
-def drink_sale
+def drink_sale(drink)
+  @drinks.delete(drink)
+  @till += drink.price
 end
 
 end
