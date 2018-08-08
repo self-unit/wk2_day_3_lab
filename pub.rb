@@ -1,12 +1,13 @@
 class Pub
 
 attr_reader :name
-attr_accessor :till, :drinks
+attr_accessor :till, :drinks, :stock
 
-def initialize(name, till, drinks)
+def initialize(name, till, drinks, stock)
   @name = name
   @till = till
   @drinks = drinks || []
+  @stock = stock || {}
 end
 
 def drink_sale(age, drink, drunkenness)
@@ -18,6 +19,10 @@ def drink_sale(age, drink, drunkenness)
     return false
     # return "You're only #{age}, get tae eff!"
   end
+end
+
+def food_sale(food)
+  @till += food.price
 end
 
 end
