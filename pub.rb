@@ -9,8 +9,8 @@ def initialize(name, till, drinks)
   @drinks = drinks || []
 end
 
-def drink_sale(age, drink)
-  if age > 18
+def drink_sale(age, drink, drunkenness)
+  if age > 18 && drunkenness < 50
     @drinks.delete(drink)
     @till += drink.price
     return true

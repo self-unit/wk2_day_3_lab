@@ -7,11 +7,11 @@ require_relative('../customer')
 class PubTest < MiniTest::Test
 
 def setup
-  @red_drink = Drink.new("Sambuca", 5)
-  @orange_drink = Drink.new("Screwdriver", 4)
-  @yellow_drink = Drink.new("Advocaat", 2)
-  @green_drink = Drink.new("Midori", 3)
-  @blue_drink = Drink.new("Blue Bols", 1)
+  @red_drink = Drink.new("Sambuca", 5, 40)
+  @orange_drink = Drink.new("Screwdriver", 4, 5)
+  @yellow_drink = Drink.new("Advocaat", 2, 12)
+  @green_drink = Drink.new("Midori", 3, 14)
+  @blue_drink = Drink.new("Blue Bols", 1, 21)
 
   @customer1 = Customer.new("Dolph Lundgren", 50, 60)
 

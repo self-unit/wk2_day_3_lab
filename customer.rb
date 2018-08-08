@@ -14,8 +14,9 @@ class Customer
 
   def buy_drink(pub, drink)
     # pub.drink_sale(@age, drink)
-    if pub.drink_sale(@age, drink) == true
+    if pub.drink_sale(@age, drink, @drunkenness) == true
     @wallet -= drink.price
+    @drunkenness += drink.alc_level
     end
 
   end
