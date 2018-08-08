@@ -25,4 +25,8 @@ def food_sale(food)
   @till += food.price
 end
 
+# def stock_value
+#   @stock
+# end
+
 end

@@ -61,13 +61,27 @@ class CustomerTest < MiniTest::Test
     assert_equal(61, @customer1.drunkenness)
   end
 
+  def test_customer_can_buy_food
+    @customer2.buy_food(@bar_1, @food2)
+    assert_equal(4, @customer2.wallet)
+    assert_equal(308, @bar_1.till)
+    assert_equal(0, @customer1.drunkenness)
+  end
+
+  def test_customer_cant_buy_food
+    @customer2.buy_drink(@bar_1, @food1)
+    assert_equal(12, @customer2.wallet)
+    assert_equal(300, @bar_1.till)
+    assert_equal(0, @customer1.drunkenness)
+  end
+
   def test_customer_rejuvenation_level
     @customer1.buy_drink(@bar_1, @red_drink)
     @customer1.buy_food(@bar_1, @food2)
 
     assert_equal(4, @bar_1.drinks.count)
     assert_equal(37, @customer1.wallet)
-    assert_equal(305, @bar_1.till)
+    assert_equal(313, @bar_1.till)
     assert_equal(25, @customer1.drunkenness)
   end
 

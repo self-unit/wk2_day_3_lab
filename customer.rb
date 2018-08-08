@@ -18,8 +18,11 @@ class Customer
   end
 
   def buy_food(pub, food)
-  @wallet -= food.price
-  @drunkenness -= food.rejuvenation_level
+    if @wallet >= food.price
+      pub.food_sale(food)
+      @wallet -= food.price
+      @drunkenness -= food.rejuvenation_level
+    end
   end
 
 end

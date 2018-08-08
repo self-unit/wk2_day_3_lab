@@ -32,4 +32,8 @@ class PubTest < MiniTest::Test
     assert_equal([@red_drink, @orange_drink, @yellow_drink, @green_drink, @blue_drink], @bar_1.drinks)
   end
 
+  # def test_pub_has_stock
+  #   assert_equal(2, @bar_1.stock_value)
+  # end
+
 end
