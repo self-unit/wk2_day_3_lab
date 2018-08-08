@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../drinks')
 require_relative('../pub')
+require_relative('../customer')
 
 class PubTest < MiniTest::Test
 
@@ -11,6 +12,8 @@ def setup
   @yellow_drink = Drink.new("Advocaat", 2)
   @green_drink = Drink.new("Midori", 3)
   @blue_drink = Drink.new("Blue Bols", 1)
+
+  @customer1 = Customer.new("Dolph Lundgren", 50, 60)
 
   @bar_1 = Pub.new("The Winchester", 300, [@red_drink, @orange_drink, @yellow_drink, @green_drink, @blue_drink])
 end

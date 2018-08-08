@@ -17,6 +17,7 @@ def setup
   @bar_1 = Pub.new("The Winchester", 300, [@red_drink, @orange_drink, @yellow_drink, @green_drink, @blue_drink])
 
   @customer1 = Customer.new("Dolph Lundgren", 50, 60)
+  @customer2 = Customer.new("Eric Cartmen", 12, 10)
 end
 
 def test_customer_has_name
@@ -36,6 +37,14 @@ end
 
 def test_age
   assert_equal(60, @customer1.age)
+
+end
+
+def test_customer_cannot_buy_drink
+  @customer2.buy_drink(@bar_1, @orange_drink)
+  assert_equal(5, @bar_1.drinks.count)
+  assert_equal(12, @customer2.wallet)
+  assert_equal(300, @bar_1.till)
 
 end
 
